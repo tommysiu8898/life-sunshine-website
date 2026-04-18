@@ -1,0 +1,27 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update
+
+media_folder: "images/uploads" # Media files will be stored here
+public_folder: "/images/uploads" # The src attribute for uploaded media
+
+collections:
+  - name: "products"
+    label: "Website Products"
+    folder: "/"
+    extension: "json"
+    format: "json"
+    create: true
+    files:
+      - label: "Product List"
+        name: "products"
+        file: "products.json"
+        fields:
+          - label: "Products"
+            name: "products"
+            widget: "list"
+            fields:
+              - {label: "Product Name", name: "name", widget: "string"}
+              - {label: "English Description", name: "desc_en", widget: "string"}
+              - {label: "Traditional Chinese Description", name: "desc_hk", widget: "string"}
+              - {label: "Simplified Chinese Description", name: "desc_cn", widget: "string"}
