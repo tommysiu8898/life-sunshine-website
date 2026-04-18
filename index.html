@@ -3,115 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Life Sunshine International</title>
+    <title>Life Sunshine | NMN+PQQ+EGT Triple Synergy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <style>
-        :root { --primary: #0F172A; --accent: #D4AF37; --text: #334155; --light: #F8FAFC; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.6; overflow-x: hidden; }
-
-        nav { background: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .logo { font-weight: 700; color: var(--primary); font-size: 1.2rem; }
-        .logo span { color: var(--accent); display: block; font-size: 0.8rem; }
-        .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--primary); font-weight: 500; font-size: 0.9rem; }
-        .lang-switcher { background: var(--light); border: 1px solid #ddd; padding: 5px 10px; border-radius: 5px; cursor: pointer; }
-
-        .hero { height: 90vh; background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding: 0 5%; margin-top: 60px; }
-        .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; }
-        .btn { background: var(--accent); color: var(--primary); padding: 1rem 2.5rem; text-decoration: none; font-weight: 700; border-radius: 50px; display: inline-block; margin-top: 1rem;}
-
-        .section { padding: 5rem 10%; }
-        .section-title { text-align: center; margin-bottom: 3rem; }
-        .section-title h2 { font-size: 2.5rem; color: var(--primary); }
-        .section-title .divider { width: 60px; height: 4px; background: var(--accent); margin: 10px auto; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .card { background: white; padding: 2.5rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 5px solid transparent; }
-        .card h3 { color: var(--primary); margin-bottom: 1rem; }
-
-        footer { background: #0a0f1d; color: white; padding: 4rem 10% 2rem; text-align: center; }
-        [lang="zh-hk"], [lang="zh-cn"] { display: none; }
+        body { font-family: 'Inter', sans-serif; }
+        .hero-gradient { background: linear-gradient(135deg, #001f3f 0%, #003366 100%); }
+        .accent-gold { color: #D4AF37; }
+        .bg-gold { background-color: #D4AF37; }
+        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
     </style>
 </head>
-<body>
+<body class="bg-gray-50 text-slate-900">
 
-    <nav>
-        <div class="logo">LIFE SUNSHINE <span>生命之光國際貿易</span></div>
-        <ul class="nav-links">
-            <li><a href="#home" class="tr" data-en="Home" data-hk="首頁" data-cn="首页">Home</a></li>
-            <li><a href="#product" class="tr" data-en="Product" data-hk="產品資訊" data-cn="产品资讯">Product</a></li>
-            <select class="lang-switcher" id="langSelect" onchange="changeLanguage(this.value)">
-                <option value="en">English</option>
-                <option value="zh-hk">繁體中文</option>
-                <option value="zh-cn">简体中文</option>
-            </select>
-        </ul>
+    <nav class="sticky top-0 z-50 glass border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-900 tracking-tight">LIFE SUNSHINE</div>
+            <div class="flex gap-2">
+                <button onclick="setLang('en')" class="px-3 py-1 text-sm border rounded hover:bg-gray-100">EN</button>
+                <button onclick="setLang('hk')" class="px-3 py-1 text-sm border rounded hover:bg-gray-100">繁</button>
+                <button onclick="setLang('cn')" class="px-3 py-1 text-sm border rounded hover:bg-gray-100">简</button>
+            </div>
+        </div>
     </nav>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1 class="tr" data-en="Unlock Cellular Vitality" data-hk="開啟細胞修復之源" data-cn="开启细胞修复之源">Unlock Cellular Vitality</h1>
-            <a href="mailto:contact@lssitl.com" class="btn tr" data-en="Contact for Referral" data-hk="聯繫引薦人" data-cn="联系引荐人">Contact for Referral</a>
+    <header class="hero-gradient text-white py-20 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 id="hero-tag" class="text-blue-300 font-semibold tracking-widest uppercase mb-4">Cellular Energy Repair</h2>
+            <h1 id="hero-title" class="text-4xl md:text-6xl font-bold mb-6">Revitalize Your Cells. <br><span class="accent-gold">Stay Young & Vital.</span></h1>
+            <p id="hero-desc" class="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">The world's first closed-loop mitochondrial system: NMN + PQQ + EGT.</p>
+            <a href="#science" class="bg-gold text-white px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform inline-block">Learn the Science</a>
+        </div>
+    </header>
+
+    <section id="science" class="py-16 max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 id="science-title" class="text-3xl font-bold text-blue-900 mb-4">The Science of Triple Synergy</h2>
+            <p id="science-desc" class="text-gray-600">Why NMN alone is not enough. We provide the Fuel, the Engine, and the Shield.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="bg-white p-8 rounded-2xl shadow-xl">
+                <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="200" cy="150" r="80" fill="#003366" opacity="0.1" />
+                    <circle cx="140" cy="260" r="80" fill="#D4AF37" opacity="0.1" />
+                    <circle cx="260" cy="260" r="80" fill="#2D3748" opacity="0.1" />
+                    
+                    <line x1="200" y1="150" x2="140" y2="260" stroke="#003366" stroke-width="2" stroke-dasharray="4"/>
+                    <line x1="200" y1="150" x2="260" y2="260" stroke="#003366" stroke-width="2" stroke-dasharray="4"/>
+                    <line x1="140" y1="260" x2="260" y2="260" stroke="#003366" stroke-width="2" stroke-dasharray="4"/>
+
+                    <g transform="translate(200,150)">
+                        <circle r="40" fill="#003366" />
+                        <text y="5" text-anchor="middle" fill="white" font-weight="bold" font-size="12">NMN</text>
+                        <text y="55" text-anchor="middle" fill="#003366" font-size="10" font-weight="bold">FUEL / 激活</text>
+                    </g>
+                    <g transform="translate(140,260)">
+                        <circle r="40" fill="#D4AF37" />
+                        <text y="5" text-anchor="middle" fill="white" font-weight="bold" font-size="12">PQQ</text>
+                        <text y="55" text-anchor="middle" fill="#D4AF37" font-size="10" font-weight="bold">ENGINE / 新生</text>
+                    </g>
+                    <g transform="translate(260,260)">
+                        <circle r="40" fill="#2D3748" />
+                        <text y="5" text-anchor="middle" fill="white" font-weight="bold" font-size="12">EGT</text>
+                        <text y="55" text-anchor="middle" fill="#2D3748" font-size="10" font-weight="bold">SHIELD / 守护</text>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="space-y-6">
+                <div class="p-4 border-l-4 border-blue-900 bg-white shadow-sm">
+                    <h3 class="font-bold text-lg text-blue-900">1. NMN (350mg)</h3>
+                    [span_2](start_span)<p class="text-gray-600 text-sm" id="feat-1">Activates NAD+ levels to fuel cellular repair.[span_2](end_span)</p>
+                </div>
+                <div class="p-4 border-l-4 border-yellow-600 bg-white shadow-sm">
+                    <h3 class="font-bold text-lg text-yellow-700">2. PQQ (10mg)</h3>
+                    [span_3](start_span)<p class="text-gray-600 text-sm" id="feat-2">Stimulates the growth of new mitochondria (The Engine).[span_3](end_span)</p>
+                </div>
+                <div class="p-4 border-l-4 border-slate-700 bg-white shadow-sm">
+                    <h3 class="font-bold text-lg text-slate-800">3. EGT (10mg)</h3>
+                    [span_4](start_span)<p class="text-gray-600 text-sm" id="feat-3">Potent antioxidant that shields mitochondria from damage.[span_4](end_span)</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="section" id="product" style="background: var(--light);">
-        <div class="section-title">
-            <h2 class="tr" data-en="Our Products" data-hk="我們的產品" data-cn="我们的产品">Our Products</h2>
-            <div class="divider"></div>
+    <section class="bg-blue-50 py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 id="prod-title" class="text-3xl font-bold text-center text-blue-900 mb-12">Our Core Formula</h2>
+            <div id="product-list" class="grid md:grid-cols-3 gap-8">
+                </div>
         </div>
-        <div class="grid" id="product-container"></div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Life Sunshine International Trading Limited.</p>
+    <footer class="py-10 text-center text-gray-400 text-sm">
+        &copy; 2024 Life Sunshine International Trading. All Rights Reserved.
     </footer>
 
     <script>
+        const translations = {
+            en: {
+                heroTag: "Cellular Energy Repair",
+                heroTitle: "Revitalize Your Cells. <br><span class='accent-gold'>Stay Young & Vital.</span>",
+                heroDesc: "The world's first closed-loop mitochondrial system: NMN + PQQ + EGT.",
+                scienceTitle: "The Science of Triple Synergy",
+                scienceDesc: "Why NMN alone is not enough. We provide the Fuel, the Engine, and the Shield.",
+                feat1: "Activates NAD+ levels to fuel cellular repair.",
+                feat2: "Stimulates the growth of new mitochondria (The Engine).",
+                feat3: "Potent antioxidant that shields mitochondria from damage.",
+                prodTitle: "Our Core Formula"
+            },
+            hk: {
+                heroTag: "細胞能量修護",
+                heroTitle: "每日煥活細胞能量 <br><span class='accent-gold'>保持年輕活力</span>",
+                heroDesc: "全球首創線粒體閉環系統：NMN + PQQ + 麥角硫因 (EGT)。",
+                scienceTitle: "三重協同科學",
+                scienceDesc: "為什麼單一 NMN 並不足夠。我們提供燃料、引擎與盾牌。",
+                feat1: "激活 NAD+ 水平，為細胞修復提供動力。",
+                feat2: "促進新線粒體（細胞引擎）的生長。",
+                feat3: "強效抗氧化劑，保護線粒體免受損傷。",
+                prodTitle: "核心配方"
+            },
+            cn: {
+                heroTag: "细胞能量修护",
+                heroTitle: "每日焕活细胞能量 <br><span class='accent-gold'>保持年轻活力</span>",
+                heroDesc: "全球首创线粒体闭环系统：NMN + PQQ + 麦角硫因 (EGT)。",
+                scienceTitle: "三重协同科学",
+                scienceDesc: "为什么单一 NMN 并不足够。我们提供燃料、引擎与盾牌。",
+                feat1: "激活 NAD+ 水平，为细胞修复提供动力。",
+                feat2: "促进新线粒体（细胞引擎）的生长。",
+                feat3: "强效抗氧化剂，保护线粒体免受损伤。",
+                prodTitle: "核心配方"
+            }
+        };
+
         let currentLang = 'en';
 
-        function changeLanguage(lang) {
+        function setLang(lang) {
             currentLang = lang;
-            const elements = document.querySelectorAll('.tr');
-            elements.forEach(el => {
-                const text = el.getAttribute(`data-${lang === 'zh-hk' ? 'hk' : lang === 'zh-cn' ? 'cn' : 'en'}`);
-                if (text) el.innerText = text;
-            });
-            loadProducts(); // Reload products in the new language
+            document.getElementById('hero-tag').innerText = translations[lang].heroTag;
+            document.getElementById('hero-title').innerHTML = translations[lang].heroTitle;
+            document.getElementById('hero-desc').innerText = translations[lang].heroDesc;
+            document.getElementById('science-title').innerText = translations[lang].scienceTitle;
+            document.getElementById('science-desc').innerText = translations[lang].scienceDesc;
+            document.getElementById('feat-1').innerText = translations[lang].feat1;
+            document.getElementById('feat-2').innerText = translations[lang].feat2;
+            document.getElementById('feat-3').innerText = translations[lang].feat3;
+            document.getElementById('prod-title').innerText = translations[lang].prodTitle;
+            renderProducts();
         }
 
-        async function loadProducts() {
+        async function renderProducts() {
             try {
                 const response = await fetch('products.json');
                 const data = await response.json();
-                const products = data.products || data; // Handle Decap formatting
-                
-                const container = document.getElementById('product-container');
-                container.innerHTML = ''; 
+                const container = document.getElementById('product-list');
+                container.innerHTML = '';
 
-                products.forEach(item => {
-                    // Determine which language description to show
-                    let desc = item.desc_en;
-                    if (currentLang === 'zh-hk') desc = item.desc_hk;
-                    if (currentLang === 'zh-cn') desc = item.desc_cn;
-
-                    const card = `
-                        <div class="card">
-                            <h3>${item.name}</h3>
-                            <p>${desc}</p>
+                data.products.forEach(p => {
+                    const desc = currentLang === 'en' ? p.desc_en : (currentLang === 'hk' ? p.desc_hk : p.desc_cn);
+                    container.innerHTML += `
+                        <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">${p.name}</h3>
+                            <p class="text-gray-600 text-sm">${desc}</p>
                         </div>
                     `;
-                    container.innerHTML += card;
                 });
-            } catch (error) {
-                console.error('Error loading products:', error);
-            }
+            } catch (e) { console.error("Could not load products", e); }
         }
 
-        // Initial load
-        loadProducts();
+        window.onload = () => setLang('en');
     </script>
 </body>
 </html>
