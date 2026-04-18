@@ -1,20 +1,16 @@
 backend:
   name: git-gateway
-  branch: main # Branch to update
+  branch: main
 
-media_folder: "images/uploads" # Media files will be stored here
-public_folder: "/images/uploads" # The src attribute for uploaded media
+media_folder: "images"
+public_folder: "/images"
 
 collections:
-  - name: "products"
-    label: "Website Products"
-    folder: "/"
-    extension: "json"
-    format: "json"
-    create: true
+  - name: "pages"
+    label: "Website Content"
     files:
-      - label: "Product List"
-        name: "products"
+      - name: "product_list"
+        label: "Product List"
         file: "products.json"
         fields:
           - label: "Products"
